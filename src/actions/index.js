@@ -15,12 +15,12 @@ export const fetchPosts = () => async dispatch => {
 //   dispatch({ type: 'FETCH_USER', payload: response.data });
 // };
 
-export const fetchUser = _.memoize(function(id) {
-  return async function(dispatch) {
+export const fetchUser = function(id) {
+  return _.memoize(async function(dispatch) {
     const response = await jsonPlaceholder.get(`/users/${id}`);
 
     // note the backticks shit is ES2015 syntax
 
     dispatch({ type: 'FETCH_USER', payload: response.data });
-  };
-});
+  });
+};
