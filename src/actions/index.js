@@ -1,3 +1,4 @@
+import _ from 'lodash'; // by convention we import lodash as underscore
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 
 export const fetchPosts = () => async dispatch => {
